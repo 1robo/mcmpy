@@ -23,3 +23,7 @@ Three-day course during National Day  For ICC
 - [**Day 3**]
     - 数学建模基本知识 
     - 第一个数学建模案例
+    
+### 随堂资料
+- /code  源代码
+- /doc   相关资料
