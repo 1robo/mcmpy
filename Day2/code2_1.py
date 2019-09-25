@@ -4,7 +4,7 @@ import numpy as np
 # 通用字体设置
 import matplotlib as mpl
 mpl.rcParams['font.sans-serif'] = ['SimHei']   #设置简黑字体
-mpl.rcParams['axes.unicode_minus'] = False # 解决‘-’bug
+
 plt.grid(linestyle='-.')
 title = '弹簧伸长与所吊重物质量之间关系模型'
 plt.title(title)
