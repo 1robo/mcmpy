@@ -16,12 +16,10 @@ number = [9.6,18.3,29,47.2,71.1,119.1,174.6,257.3,\
           350.7,441.0,513.3,559.7,594.8,629.4,640.8,\
           651.1,655.9,659.6,661.8]
 
-#plt.plot(time,number)#画图
-#plt.show()#显示
 
-F = np.polyfit(time,number,1) #按一阶多项式拟合
-print(F) #输出各项系数
-P = np.poly1d(F)
+fit = np.polyfit(time,number,1) #按一阶多项式拟合
+print(fit) #输出各项系数
+P = np.poly1d(fit)
 print(P) #输出方程式
 
 
