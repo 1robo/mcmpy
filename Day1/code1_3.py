@@ -31,6 +31,6 @@ for i in range(1,n+1) :
     x = d + (A-(i-1)*d)*m
     pic_y1.append(x)
 
-plt.plot(pic_x,pic_y)
-plt.plot(pic_x,pic_y1)
+plt.plot(pic_x,pic_y,',')
+plt.plot(pic_x,pic_y1,',')
 plt.show()
