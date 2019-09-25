@@ -13,7 +13,7 @@ m = R/12        #月利率
 n = 12*Y        #总还款期数
 d = A/n         #等额本金每月本金还款
 
-title = str(int(A/10000)) +'万贷款'+str(Y)+'年 年利率'+str(int(R*100))+'%  每月还款额示意图\n蓝色-等额本息 黄色-等额本金'
+title = str(int(A/10000)) +'万贷款'+str(Y)+'年 年利率'+str(int(R*100))+'% 每月还款额示意图'
 plt.title(title)
 plt.xlabel('月份')
 plt.ylabel('每月还款金额 （元）')
@@ -31,6 +31,7 @@ for i in range(1,n+1) :
     x = d + (A-(i-1)*d)*m
     pic_y1.append(x)
 
-plt.plot(pic_x,pic_y,',')
-plt.plot(pic_x,pic_y1,',')
+plt.plot(pic_x,pic_y,'.',label='等额本息')
+plt.plot(pic_x,pic_y1,'.',label='等额本金')
+plt.legend()                  #显示标签
 plt.show()
