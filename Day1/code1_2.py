@@ -32,5 +32,5 @@ pic_y1= [A*(2+m*i*12+m)/2 for i in pic_x]
 
 plt.plot(pic_x,pic_y,label='等额本息')
 plt.plot(pic_x,pic_y1,label='等额本金')
-plt.legend()
+plt.legend()                  #显示标签
 plt.show()
