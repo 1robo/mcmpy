@@ -24,11 +24,8 @@ print(F) #输出各项系数
 P = np.poly1d(F)
 print(P) #输出方程式
 
- 
-number1 = np.polyval(F,time)
+
 plt.plot(time,number,'o',label='实际测量值')
-plt.plot(time,number1,label='拟合曲线')
+plt.plot(time,P(time),label='拟合曲线')
 plt.legend() 
 plt.show()
-
-
