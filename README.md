@@ -14,7 +14,12 @@ Three-day course during National Day  For ICC
        - python -m pip install -U numpy
        - python -m pip install -U pandas
        - python -m pip install -U xlrd
- 
+ - [**编程能力**]
+   - 学习《跟我学Python》入门视频12节 
+   - 阅读《Python程序设计与算法基础教程》
+ - [**数学基础**]
+   - 待定
+  
 ### 课程列表
 - [**Day 1**]
     - Python进阶和数学建模简介 
