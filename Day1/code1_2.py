@@ -1,36 +1,29 @@
-### Day1 住房贷款 图表1 ###
+### Day2 曲线拟合 回归分析 ###
+import matplotlib.pyplot as plt 
+import numpy as np
+# 通用字体设置
+import matplotlib as mpl
+mpl.rcParams['font.sans-serif'] = ['SimHei']   #设置简黑字体
 
-import matplotlib.pyplot as plt
-import matplotlib as mpl                      # 通用字体设置
-mpl.rcParams['font.sans-serif'] = ['SimHei']  #设置简黑字体
-
-A = 4000000     #总贷款额
-Y = 10          #贷款年份
-C = C1 = 0      #等额本息、等额本金总还款
-B = B1 = 0      #等额本息、等额本金总利息  
-R = 0.06        #年利率 
-m = R/12        #月利率
-n = 12*Y        #总还款期数
-d = A/n         #等额本金每月本金还款
-
-title = str(A) + '万贷款 年利率'+str(int(R*100))+'% 总还款额示意图'
-plt.title(title)
-plt.xlabel('贷款年份')
-plt.ylabel('总还款额（万元）')
 plt.grid(linestyle='-.')
+title = '酵母菌数量增长模型'
+plt.title(title)
+plt.xlabel('时间 (小时）')
+plt.ylabel('酵母菌生物量')
 
-#print("### 等额本息",Y,"年 ###")     #等额本息
-#C = A*R*Y*pow(1+m,n) / (pow(1+m,n)-1)
+time = [i for i in range(0,19)]
+number = [9.6,18.3,29,47.2,71.1,119.1,174.6,257.3,\
+          350.7,441.0,513.3,559.7,594.8,629.4,640.8,\
+          651.1,655.9,659.6,661.8]
 
-#print("### 等额本金",Y,"年 ###")     #等额本金 
-#C1 = A*(2+m*n+m)/2
 
-A = int(A/10000)                #贷款400万
-pic_x = [1,5,10,15,20,25,30]    # 年份
-pic_y = [A*R*i*pow(1+m,i*12)/(pow(1+m,i*12)-1) for i in pic_x] # 万元
-pic_y1= [A*(2+m*i*12+m)/2 for i in pic_x]
+fit = np.polyfit(time,number,1) #按一阶多项式拟合
+print(fit) #输出各项系数
+P = np.poly1d(fit)
+print(P) #输出方程式
 
-plt.plot(pic_x,pic_y,label='等额本息')
-plt.plot(pic_x,pic_y1,label='等额本金')
-plt.legend()                  #显示标签
+
+plt.plot(time,number,'o',label='实际测量值')
+plt.plot(time,P(time),label='拟合曲线')
+plt.legend() 
 plt.show()
