@@ -9,7 +9,7 @@ plt.grid(linestyle='-.')
 title = '酵母菌数量增长模型'
 plt.title(title)
 plt.xlabel('时间 (小时）')
-plt.ylabel('酵母菌数量（万个）')
+plt.ylabel('酵母菌生物量')
 
 time = [i for i in range(0,19)]
 number = [9.6,18.3,29,47.2,71.1,119.1,174.6,257.3,\
