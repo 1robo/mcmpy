@@ -18,9 +18,9 @@ Three-day course during National Day  For ICC
     - 数学建模基本知识 
     - 第一个数学建模案例
 - [**Day 2**]
-    - 待定
-    - 待定
+    - 一元线性回归分析
+    - 非线性回归分析
 - [**Day 3**]
-    - 待定
-    - 待定
+    - 图论模型
+    - 项目实战
     
