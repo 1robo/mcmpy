@@ -17,7 +17,8 @@ title = str(int(A/10000)) +'万贷款'+str(Y)+'年 年利率'+str(int(R*100))+'%
 plt.title(title)
 plt.xlabel('月份')
 plt.ylabel('每月还款金额 （元）')
-plt.grid(linestyle='-.', axis='y') #只显示y轴网格线
+plt.minorticks_on()    #打开细格标记
+plt.grid(which='both') #显示网格线
 
 #print("### 等额本息",Y,"年 ###")     #等额本息
 #x = A*m*pow(1+m,n) / (pow(1+m,n)-1)  
