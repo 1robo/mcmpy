@@ -1,11 +1,11 @@
-### Day2 曲线拟合 回归分析 ###
+### Day2 差分方程 ###
 import matplotlib.pyplot as plt 
 import numpy as np
 # 通用字体设置
 import matplotlib as mpl
 mpl.rcParams['font.sans-serif'] = ['SimHei']   #设置简黑字体
-
-plt.grid(linestyle='-.')
+plt.minorticks_on()
+plt.grid(which="both")
 title = '酵母菌数量增长模型'
 plt.title(title)
 plt.xlabel('时间 (小时）')
@@ -16,14 +16,26 @@ number = [9.6,18.3,29,47.2,71.1,119.1,174.6,257.3,\
           350.7,441.0,513.3,559.7,594.8,629.4,640.8,\
           651.1,655.9,659.6,661.8]
 
+pn = [9.6,18.3,29,47.2,71.1,119.1,174.6,\
+      257.3,350.7,441.0,513.3,559.7,594.8,629.4,\
+      640.8,651.1,655.9,659.6]     #去掉时间为18 的生物量
+deltap = [8.7,10.7,18.2,23.9,48,55.5,\
+          82.7,93.4,90.3,72.3,46.4,35.1,\
+          34.6,11.4,10.3,4.8,3.7,2.2]     
+pn = np.array(pn)
+factor = pn*(666-pn)
+fit = np.polyfit(factor,deltap,1)
+print(fit)
 
-fit = np.polyfit(time,number,1) #按一阶多项式拟合
-print(fit) #输出各项系数
-P = np.poly1d(fit)
-print(P) #输出方程式
 
+plist = [0 for i in range(25)]
+plist[0] = 9.6
+for i in range(1,25):    
+    plist[i] = 0.00081418*(666-plist[i-1])*plist[i-1] + plist[i-1]
+
+time1 = [i for i in range(0,25)]  #延长时间轴来观察变化趋势   
 
 plt.plot(time,number,'o',label='实际测量值')
-plt.plot(time,P(time),label='拟合曲线')
+plt.plot(time1,plist,label='差分方程曲线')
 plt.legend() 
 plt.show()
