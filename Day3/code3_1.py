@@ -2,6 +2,8 @@
 
 # 更多的networkx用法
 # 参考官方文档 https://networkx.github.io/documentation/latest/tutorial.html
+import warnings
+warnings.filterwarnings("ignore")  #忽略警告
 import matplotlib.pyplot as plt
 import networkx as nx
 G = nx.Graph()
