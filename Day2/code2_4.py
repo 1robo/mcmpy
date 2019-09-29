@@ -5,7 +5,7 @@ import numpy as np
 # 通用字体设置
 import matplotlib as mpl
 mpl.rcParams['font.sans-serif'] = ['SimHei']   #设置简黑字体
-
+mpl.rcParams['axes.unicode_minus'] = False     # 解决‘-’bug
 plt.grid(linestyle='-.')
 title = '机器数量与商品产量关系'
 plt.title(title)
