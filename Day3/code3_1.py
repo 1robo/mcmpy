@@ -1,3 +1,7 @@
+### Day3 简单图论模型 范例程序1 ###
+
+# 更多的networkx用法
+# 参考官方文档 https://networkx.github.io/documentation/latest/tutorial.html
 import matplotlib.pyplot as plt
 import networkx as nx
 G = nx.Graph()
