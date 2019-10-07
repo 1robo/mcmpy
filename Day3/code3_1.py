@@ -12,7 +12,7 @@ G.add_nodes_from(nlist)
 elist = [('A','B'),('B','C'),('C','D'),('A','D')]
 G.add_edges_from(elist)
 nx.draw_networkx(G)
-print(nx.shortest_path(G, 'A', 'C'))
+print(nx.shortest_path(G, 'A', 'C')) #algorithm with dijskra
 print(nx.shortest_path_length(G, 'A', 'C'))
 plt.show()
 
